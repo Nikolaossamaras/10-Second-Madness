@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b302fimnogm7n"]
+
+[ext_resource type="Script" uid="uid://dpbc7pjvtmfwa" path="res://script/title_screen.gd" id="1_43jph"]
+[ext_resource type="Texture2D" uid="uid://upwp7dphbyq5" path="res://asset/bg_10second_madness.png" id="1_vfru1"]
+
+[node name="TitleScreen" type="Node2D" unique_id=254022663]
+script = ExtResource("1_43jph")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1841636092]
+offset_right = 1577.0
+offset_bottom = 728.0
+scale = Vector2(0.7405768, 0.93860847)
+texture = ExtResource("1_vfru1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1767605062]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = 143.0
+offset_right = 1103.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/normal_font_size = 108
+text = "10 second madness"
+
+[node name="start" type="Button" parent="." unique_id=366444448]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 454.0
+offset_top = 335.0
+offset_right = 696.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.93374276, 0.45598608, 0.56430215, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="settings" type="Button" parent="." unique_id=362865259]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 472.0
+offset_top = 396.0
+offset_right = 673.0
+offset_bottom = 449.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.34336713, 0.5998862, 0.91315323, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS"
+
+[node name="quit" type="Button" parent="." unique_id=1001165162]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 520.0
+offset_top = 454.0
+offset_right = 617.0
+offset_bottom = 507.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.40784314, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "quit
+"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
