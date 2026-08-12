@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://3ha2t47jmer1"]
+
+[ext_resource type="Texture2D" uid="uid://c56cn6y1234sv" path="res://asset/bg_10second_madness.png" id="1_e8tat"]
+[ext_resource type="PackedScene" uid="uid://ghw5gxqk0yk0" path="res://scene/player.tscn" id="2_gj5dx"]
+[ext_resource type="Texture2D" uid="uid://cux4xmbmwkihj" path="res://asset/heart_10sec_madness.png" id="3_my06d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwmbd"]
+size = Vector2(1148, 84)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_my06d"]
+radius = 43.046486
+
+[sub_resource type="Animation" id="Animation_my06d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("collectable/collectable:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(363, 296)]
+}
+
+[sub_resource type="Animation" id="Animation_g1qlf"]
+resource_name = "mov"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("collectable/collectable:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9916667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(363, 296), Vector2(980, 296)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lsep"]
+_data = {
+&"RESET": SubResource("Animation_my06d"),
+&"mov": SubResource("Animation_g1qlf")
+}
+
+[sub_resource type="Animation" id="Animation_0lsep"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("collectable:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(381.69232, 296)]
+}
+
+[sub_resource type="Animation" id="Animation_21jep"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("collectable:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(381.69232, 296), Vector2(988, 296)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15epp"]
+_data = {
+&"RESET": SubResource("Animation_0lsep"),
+&"new_animation": SubResource("Animation_21jep")
+}
+
+[node name="minigame_1" type="Node2D" unique_id=1184656323]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=787414260]
+scale = Vector2(0.7343962, 0.86122334)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 2
+
+[node name="bg" type="TextureRect" parent="Parallax2D" unique_id=880255681]
+offset_right = 2124.828
+offset_bottom = 861.5277
+scale = Vector2(0.7343962, 0.86122334)
+texture = ExtResource("1_e8tat")
+
+[node name="platform" type="StaticBody2D" parent="." unique_id=71621358]
+position = Vector2(351, 482)
+scale = Vector2(0.39972153, 1)
+
+[node name="ColorRect" type="ColorRect" parent="platform" unique_id=1974761489]
+offset_top = -72.0
+offset_right = 1149.0
+offset_bottom = 10.0
+color = Color(0.32658187, 0.66265386, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform" unique_id=377799671]
+position = Vector2(574, -32)
+shape = SubResource("RectangleShape2D_rwmbd")
+debug_color = Color(0.65407866, 0.032162003, 0.27045298, 0.41960785)
+
+[node name="platform2" type="StaticBody2D" parent="." unique_id=1603343034]
+position = Vector2(695, 275)
+scale = Vector2(0.39972153, 1)
+
+[node name="ColorRect" type="ColorRect" parent="platform2" unique_id=1608939485]
+offset_top = -72.0
+offset_right = 1149.0
+offset_bottom = 10.0
+color = Color(0.32658187, 0.66265386, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2" unique_id=1173921459]
+position = Vector2(574, -32)
+shape = SubResource("RectangleShape2D_rwmbd")
+debug_color = Color(0.65407866, 0.032162003, 0.27045298, 0.41960785)
+
+[node name="border" type="StaticBody2D" parent="." unique_id=144299263]
+position = Vector2(0, 636)
+
+[node name="ColorRect" type="ColorRect" parent="border" unique_id=553545082]
+offset_top = -72.0
+offset_right = 1149.0
+offset_bottom = 10.0
+color = Color(0.32658187, 0.66265386, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=808899047]
+position = Vector2(574, -32)
+shape = SubResource("RectangleShape2D_rwmbd")
+debug_color = Color(0.65407866, 0.032162003, 0.27045298, 0.41960785)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="border" unique_id=1322550298]
+polygon = PackedVector2Array(2, -614, 7, -754, 1152, -760, 1162, 17, 1, 25, 4, -612, -202, -601, -220, 128, 1346, 131, 1332, -713, 1320, -882, -139, -802, -202, -596)
+
+[node name="player" parent="." unique_id=922036850 instance=ExtResource("2_gj5dx")]
+position = Vector2(126, 464)
+scale = Vector2(7, 7)
+
+[node name="collectable" type="Node2D" parent="." unique_id=1972225264]
+
+[node name="collectable" type="TextureRect" parent="collectable" unique_id=2051761070]
+offset_left = 363.0
+offset_top = 296.0
+offset_right = 503.00262
+offset_bottom = 406.00006
+texture = ExtResource("3_my06d")
+expand_mode = 1
+
+[node name="collect_area" type="Area2D" parent="collectable/collectable" unique_id=1198837954]
+position = Vector2(-360.28525, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectable/collectable/collect_area" unique_id=1484937413]
+position = Vector2(432, 349)
+shape = SubResource("CircleShape2D_my06d")
+debug_color = Color(0.9406089, 1.0299981e-05, 0.61643845, 0.41960785)
+
+[node name="collectable_an" type="AnimationPlayer" parent="collectable" unique_id=1824649397]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0lsep")
+autoplay = &"mov"
+
+[node name="collectable2" type="Node2D" parent="." unique_id=793337899]
+position = Vector2(-114, -215)
+
+[node name="collectable" type="TextureRect" parent="collectable2" unique_id=1510131511]
+offset_left = 381.69232
+offset_top = 296.0
+offset_right = 521.6938
+offset_bottom = 406.00006
+texture = ExtResource("3_my06d")
+expand_mode = 1
+
+[node name="collect_area" type="Area2D" parent="collectable2/collectable" unique_id=779243861]
+position = Vector2(-360.28525, -296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectable2/collectable/collect_area" unique_id=2145703870]
+position = Vector2(432, 349)
+shape = SubResource("CircleShape2D_my06d")
+debug_color = Color(0.9406089, 1.0299981e-05, 0.61643845, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="collectable2" unique_id=1157317828]
+libraries/ = SubResource("AnimationLibrary_15epp")
+autoplay = &"new_animation"

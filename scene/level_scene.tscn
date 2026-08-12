@@ -1,3 +1,81 @@
 [gd_scene format=3 uid="uid://t8srvqgelitv"]
 
+[ext_resource type="Texture2D" uid="uid://bbxalsjgpbm6q" path="res://asset/bg_10second_madness.png" id="1_6g01l"]
+[ext_resource type="Script" uid="uid://dnnt7rgsce0hj" path="res://script/level_scene.gd" id="1_pc6o6"]
+[ext_resource type="Texture2D" uid="uid://c0mlf8fsdeepc" path="res://asset/heart_10sec_madness.png" id="2_f1m7q"]
+
 [node name="level_scene" type="Node2D" unique_id=922411500]
+script = ExtResource("1_pc6o6")
+
+[node name="Background" type="TextureRect" parent="." unique_id=321202428]
+offset_right = 1577.0
+offset_bottom = 728.0
+scale = Vector2(0.7405768, 0.93860847)
+texture = ExtResource("1_6g01l")
+
+[node name="lives" type="Node" parent="." unique_id=1545848912]
+
+[node name="1" type="TextureRect" parent="lives" unique_id=1694221091]
+offset_left = 142.0
+offset_top = 191.0
+offset_right = 467.0
+offset_bottom = 411.0
+scale = Vector2(1.2, 1.24)
+texture = ExtResource("2_f1m7q")
+expand_mode = 1
+
+[node name="2" type="TextureRect" parent="lives" unique_id=1807982077]
+offset_left = 247.0
+offset_top = 191.0
+offset_right = 572.0
+offset_bottom = 411.0
+scale = Vector2(1.2, 1.24)
+texture = ExtResource("2_f1m7q")
+expand_mode = 1
+
+[node name="3" type="TextureRect" parent="lives" unique_id=1150114082]
+offset_left = 373.0
+offset_top = 191.0
+offset_right = 698.0
+offset_bottom = 411.0
+scale = Vector2(1.2, 1.24)
+texture = ExtResource("2_f1m7q")
+expand_mode = 1
+
+[node name="4" type="TextureRect" parent="lives" unique_id=1186334216]
+offset_left = 495.0
+offset_top = 191.0
+offset_right = 820.0
+offset_bottom = 411.0
+scale = Vector2(1.2, 1.24)
+texture = ExtResource("2_f1m7q")
+expand_mode = 1
+
+[node name="5" type="TextureRect" parent="lives" unique_id=665185909]
+offset_left = 613.0
+offset_top = 195.0
+offset_right = 938.0
+offset_bottom = 415.0
+scale = Vector2(1.2, 1.24)
+texture = ExtResource("2_f1m7q")
+expand_mode = 1
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1856001248]
+clip_contents = false
+offset_left = 509.0
+offset_top = 561.0
+offset_right = 695.0
+offset_bottom = 609.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 32
+text = "0.0"
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=429088302]
+clip_contents = false
+offset_left = 483.0
+offset_top = 420.0
+offset_right = 644.0
+offset_bottom = 493.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 32
+text = "LEVEL #"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c56cn6y1234sv"
-path="res://.godot/imported/bg_10second_madness.png-a2f00e76e237bbcf988430335480213c.ctex"
+uid="uid://cux4xmbmwkihj"
+path="res://.godot/imported/heart_10sec_madness.png-f1594005f73f2e1ae493ac9baedebda1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/bg_10second_madness.png"
-dest_files=["res://.godot/imported/bg_10second_madness.png-a2f00e76e237bbcf988430335480213c.ctex"]
+source_file="res://asset/heart_10sec_madness.png"
+dest_files=["res://.godot/imported/heart_10sec_madness.png-f1594005f73f2e1ae493ac9baedebda1.ctex"]
 
 [params]
 

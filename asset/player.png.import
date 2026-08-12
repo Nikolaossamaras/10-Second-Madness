@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c56cn6y1234sv"
-path="res://.godot/imported/bg_10second_madness.png-a2f00e76e237bbcf988430335480213c.ctex"
+uid="uid://cdxg3cxnuelq1"
+path="res://.godot/imported/player.png-eb87c2f1bcb88aa62742fea4a8a50179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/bg_10second_madness.png"
-dest_files=["res://.godot/imported/bg_10second_madness.png-a2f00e76e237bbcf988430335480213c.ctex"]
+source_file="res://asset/player.png"
+dest_files=["res://.godot/imported/player.png-eb87c2f1bcb88aa62742fea4a8a50179.ctex"]
 
 [params]
 
