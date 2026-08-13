@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cux4xmbmwkihj" path="res://asset/heart_10sec_madness.png" id="3_my06d"]
 [ext_resource type="Script" uid="uid://bk0apky87wwgb" path="res://script/collectable.gd" id="4_21jep"]
 [ext_resource type="Script" uid="uid://dbmj20fsfhcde" path="res://script/collectable_2.gd" id="6_21jep"]
+[ext_resource type="PackedScene" uid="uid://b2u43edwxgsr7" path="res://scene/timer.tscn" id="7_15epp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwmbd"]
 size = Vector2(1148, 84)
@@ -202,10 +203,9 @@ debug_color = Color(0.9406089, 1.0299981e-05, 0.61643845, 0.41960785)
 libraries/ = SubResource("AnimationLibrary_15epp")
 autoplay = &"new_animation"
 
-[node name="Timer" type="Timer" parent="." unique_id=699519477]
+[node name="ThemedTimer" parent="." unique_id=317205918 instance=ExtResource("7_15epp")]
 
 [connection signal="garlic_collected" from="collectable" to="." method="_on_collectable_garlic_collected"]
 [connection signal="body_entered" from="collectable/collectable/Area2" to="collectable" method="_on_area_2_body_entered"]
 [connection signal="garlic_collected" from="collectable2" to="." method="_on_collectable_2_garlic_collected"]
 [connection signal="body_entered" from="collectable2/collectable/area2" to="collectable2" method="_on_area_2_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

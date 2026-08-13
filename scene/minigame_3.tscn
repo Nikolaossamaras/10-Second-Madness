@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dqarir3xn0cev"]
+
+[ext_resource type="Script" uid="uid://brctcj6sb78p1" path="res://script/minigame_3.gd" id="1_1yfil"]
+[ext_resource type="Texture2D" uid="uid://c56cn6y1234sv" path="res://asset/bg_10second_madness.png" id="1_85b5a"]
+[ext_resource type="Texture2D" uid="uid://0dhcj8kxo80p" path="res://asset/click.png" id="2_q8eg3"]
+[ext_resource type="Script" uid="uid://by4n53oa2eavf" path="res://script/clickme.gd" id="3_q8eg3"]
+[ext_resource type="PackedScene" uid="uid://b2u43edwxgsr7" path="res://scene/timer.tscn" id="4_88gds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88gds"]
+size = Vector2(1161, 84)
+
+[node name="minigame_3" type="Node2D" unique_id=1939171613]
+script = ExtResource("1_1yfil")
+clicks_needed = 50
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2014879454]
+scroll_offset = Vector2(2, 3)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 7
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=416976966]
+offset_right = 1151.0
+offset_bottom = 645.0
+texture = ExtResource("1_85b5a")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="border" type="StaticBody2D" parent="." unique_id=820947665]
+position = Vector2(2, 639)
+
+[node name="ColorRect" type="ColorRect" parent="border" unique_id=884445575]
+offset_top = -72.0
+offset_right = 1160.0
+offset_bottom = 10.0
+color = Color(0.32658187, 0.66265386, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=1653418021]
+position = Vector2(580.5, -32)
+shape = SubResource("RectangleShape2D_88gds")
+debug_color = Color(0.65407866, 0.032162003, 0.27045298, 0.41960785)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="border" unique_id=1241286984]
+polygon = PackedVector2Array(2, -614, 7, -754, 1152, -760, 1162, 17, 1, 25, 4, -612, -202, -601, -220, 128, 1346, 131, 1332, -713, 1320, -882, -139, -802, -202, -596)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=470551633]
+offset_left = 295.0
+offset_top = 141.0
+offset_right = 831.0
+offset_bottom = 586.0
+texture_normal = ExtResource("2_q8eg3")
+script = ExtResource("3_q8eg3")
+
+[node name="click_count" type="Label" parent="." unique_id=403147446]
+offset_left = 22.0
+offset_top = 46.0
+offset_right = 535.0
+offset_bottom = 134.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 64
+text = "TIMES CLICKED : "
+
+[node name="ThemedTimer" parent="." unique_id=317205918 instance=ExtResource("4_88gds")]
+position = Vector2(926, 18)
+scale = Vector2(2, 2)
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

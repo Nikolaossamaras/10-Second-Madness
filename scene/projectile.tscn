@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dh14wdt4olavs"]
+
+[ext_resource type="Script" uid="uid://cvt5tak8myafj" path="res://script/projectile.gd" id="1_u6xv6"]
+[ext_resource type="Texture2D" uid="uid://ctc2nk8b5sp5m" path="res://asset/Kla'ed/Projectiles/PNGs/Kla'ed - Big Bullet.png" id="1_v1jrq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6xv6"]
+atlas = ExtResource("1_v1jrq")
+region = Rect2(8, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0tm2"]
+atlas = ExtResource("1_v1jrq")
+region = Rect2(16, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujo14"]
+atlas = ExtResource("1_v1jrq")
+region = Rect2(24, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gaw4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6xv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0tm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujo14")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sdoi"]
+size = Vector2(4, 12)
+
+[node name="projectile" type="Area2D" unique_id=1724536608]
+script = ExtResource("1_u6xv6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1518788158]
+sprite_frames = SubResource("SpriteFrames_gaw4a")
+animation = &"attack"
+frame_progress = 0.2696877
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=416613593]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_5sdoi")
+debug_color = Color(0.9367207, 1.7327071e-05, 0.63312167, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

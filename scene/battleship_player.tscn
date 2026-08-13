@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dsn3s847fi1js"]
+
+[ext_resource type="Script" uid="uid://01p7irhgvkux" path="res://script/character_body_2d.gd" id="1_pbbsu"]
+[ext_resource type="Texture2D" uid="uid://cpiq3hckpbt0c" path="res://asset/Kla'ed/Base/PNGs/Kla'ed - Battlecruiser - Base.png" id="2_xjewr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pbbsu"]
+radius = 24.59935
+height = 76.71661
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbbsu"]
+size = Vector2(7.0879474, 20)
+
+[node name="player_ship" type="CharacterBody2D" unique_id=2146196784]
+script = ExtResource("1_pbbsu")
+
+[node name="ship_body" type="Sprite2D" parent="." unique_id=654513148]
+scale = Vector2(2.3984375, 2.3984375)
+texture = ExtResource("2_xjewr")
+
+[node name="body_col" type="CollisionShape2D" parent="." unique_id=218170449]
+position = Vector2(0, -15)
+scale = Vector2(2.3984375, 2.3984375)
+shape = SubResource("CapsuleShape2D_pbbsu")
+
+[node name="shooting_hit" type="CollisionShape2D" parent="." unique_id=348443533]
+position = Vector2(-45.5, -113)
+scale = Vector2(2.3984375, 2.3984375)
+shape = SubResource("RectangleShape2D_pbbsu")
+debug_color = Color(0.74702626, 0.46223277, 0, 0.41960785)
+
+[node name="shooting_hit2" type="CollisionShape2D" parent="." unique_id=2103331067]
+position = Vector2(46, -113)
+scale = Vector2(2.3984375, 2.3984375)
+shape = SubResource("RectangleShape2D_pbbsu")
+debug_color = Color(0.74702626, 0.46223277, 0, 0.41960785)
