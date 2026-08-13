@@ -1,6 +1,6 @@
 extends Node
 
-var lives = 1
+var lives = 5
 var minigames_done = 0
 var ships_killed =0
 var ship_needed = 10
