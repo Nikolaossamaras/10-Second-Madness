@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b1knf4qewd7nb"]
+
+[ext_resource type="Texture2D" uid="uid://c56cn6y1234sv" path="res://asset/bg_10second_madness.png" id="1_n6b2r"]
+[ext_resource type="Script" uid="uid://cm8agfuoa3ebc" path="res://script/deathscreen.gd" id="1_ypmdv"]
+
+[node name="deathscreen" type="Node2D" unique_id=1702019350]
+script = ExtResource("1_ypmdv")
+
+[node name="Timer" type="Timer" parent="." unique_id=950845411]
+wait_time = 4.0
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=84931181]
+scroll_offset = Vector2(-4, 0)
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 7
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=193761522]
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 1163.0
+offset_bottom = 649.0
+texture = ExtResource("1_n6b2r")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2007528276]
+clip_contents = false
+offset_left = 258.0
+offset_top = 185.0
+offset_right = 1091.0
+offset_bottom = 395.0
+theme_override_colors/default_color = Color(0.8509804, 0, 0.13333334, 1)
+theme_override_colors/font_selected_color = Color(0.7396408, 0.73964113, 0, 0)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 128
+text = "DEFEAT"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -44,7 +44,9 @@ script = ExtResource("1_oj80h")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=638476299]
 scroll_offset = Vector2(-4, 0)
+repeat_size = Vector2(1000, 0)
 autoscroll = Vector2(100, 0)
+repeat_times = 7
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1254826861]
 offset_left = 12.0
