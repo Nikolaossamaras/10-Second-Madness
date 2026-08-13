@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://3ha2t47jmer1"]
 
+[ext_resource type="Script" uid="uid://baessfkj0hxhn" path="res://script/minigame_1.gd" id="1_0lsep"]
 [ext_resource type="Texture2D" uid="uid://c56cn6y1234sv" path="res://asset/bg_10second_madness.png" id="1_e8tat"]
 [ext_resource type="PackedScene" uid="uid://ghw5gxqk0yk0" path="res://scene/player.tscn" id="2_gj5dx"]
 [ext_resource type="Texture2D" uid="uid://cux4xmbmwkihj" path="res://asset/heart_10sec_madness.png" id="3_my06d"]
+[ext_resource type="Script" uid="uid://bk0apky87wwgb" path="res://script/collectable.gd" id="4_21jep"]
+[ext_resource type="Script" uid="uid://dbmj20fsfhcde" path="res://script/collectable_2.gd" id="6_21jep"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwmbd"]
 size = Vector2(1148, 84)
@@ -86,6 +89,7 @@ _data = {
 }
 
 [node name="minigame_1" type="Node2D" unique_id=1184656323]
+script = ExtResource("1_0lsep")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=787414260]
 scale = Vector2(0.7343962, 0.86122334)
@@ -151,6 +155,7 @@ position = Vector2(126, 464)
 scale = Vector2(7, 7)
 
 [node name="collectable" type="Node2D" parent="." unique_id=1972225264]
+script = ExtResource("4_21jep")
 
 [node name="collectable" type="TextureRect" parent="collectable" unique_id=2051761070]
 offset_left = 363.0
@@ -160,10 +165,10 @@ offset_bottom = 406.00006
 texture = ExtResource("3_my06d")
 expand_mode = 1
 
-[node name="collect_area" type="Area2D" parent="collectable/collectable" unique_id=1198837954]
+[node name="Area2" type="Area2D" parent="collectable/collectable" unique_id=1198837954]
 position = Vector2(-360.28525, -296)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collectable/collectable/collect_area" unique_id=1484937413]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectable/collectable/Area2" unique_id=1484937413]
 position = Vector2(432, 349)
 shape = SubResource("CircleShape2D_my06d")
 debug_color = Color(0.9406089, 1.0299981e-05, 0.61643845, 0.41960785)
@@ -175,6 +180,7 @@ autoplay = &"mov"
 
 [node name="collectable2" type="Node2D" parent="." unique_id=793337899]
 position = Vector2(-114, -215)
+script = ExtResource("6_21jep")
 
 [node name="collectable" type="TextureRect" parent="collectable2" unique_id=1510131511]
 offset_left = 381.69232
@@ -184,10 +190,10 @@ offset_bottom = 406.00006
 texture = ExtResource("3_my06d")
 expand_mode = 1
 
-[node name="collect_area" type="Area2D" parent="collectable2/collectable" unique_id=779243861]
+[node name="area2" type="Area2D" parent="collectable2/collectable" unique_id=779243861]
 position = Vector2(-360.28525, -296)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collectable2/collectable/collect_area" unique_id=2145703870]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectable2/collectable/area2" unique_id=2145703870]
 position = Vector2(432, 349)
 shape = SubResource("CircleShape2D_my06d")
 debug_color = Color(0.9406089, 1.0299981e-05, 0.61643845, 0.41960785)
@@ -195,3 +201,11 @@ debug_color = Color(0.9406089, 1.0299981e-05, 0.61643845, 0.41960785)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="collectable2" unique_id=1157317828]
 libraries/ = SubResource("AnimationLibrary_15epp")
 autoplay = &"new_animation"
+
+[node name="Timer" type="Timer" parent="." unique_id=699519477]
+
+[connection signal="garlic_collected" from="collectable" to="." method="_on_collectable_garlic_collected"]
+[connection signal="body_entered" from="collectable/collectable/Area2" to="collectable" method="_on_area_2_body_entered"]
+[connection signal="garlic_collected" from="collectable2" to="." method="_on_collectable_2_garlic_collected"]
+[connection signal="body_entered" from="collectable2/collectable/area2" to="collectable2" method="_on_area_2_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

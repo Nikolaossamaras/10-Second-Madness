@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cm368uw0dfpjr"]
+
+[ext_resource type="Texture2D" uid="uid://c56cn6y1234sv" path="res://asset/bg_10second_madness.png" id="1_0itp5"]
+[ext_resource type="Script" uid="uid://cs1nwa5nnnhey" path="res://script/minigame_2.gd" id="1_lymyy"]
+[ext_resource type="Texture2D" uid="uid://cux4xmbmwkihj" path="res://asset/heart_10sec_madness.png" id="2_ymxsy"]
+[ext_resource type="Script" uid="uid://ceprksbr7r848" path="res://script/texture_button.gd" id="3_8sst4"]
+[ext_resource type="PackedScene" uid="uid://b2u43edwxgsr7" path="res://scene/timer.tscn" id="4_8sst4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0itp5"]
+size = Vector2(1161, 84)
+
+[node name="minigame_2" type="Node2D" unique_id=2001762583]
+script = ExtResource("1_lymyy")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=794097166]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 7
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1940046887]
+offset_right = 1151.0
+offset_bottom = 645.0
+texture = ExtResource("1_0itp5")
+expand_mode = 1
+
+[node name="border" type="StaticBody2D" parent="." unique_id=77131055]
+position = Vector2(0, 636)
+
+[node name="ColorRect" type="ColorRect" parent="border" unique_id=1781416550]
+offset_top = -72.0
+offset_right = 1160.0
+offset_bottom = 10.0
+color = Color(0.32658187, 0.66265386, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border" unique_id=1623749287]
+position = Vector2(580.5, -32)
+shape = SubResource("RectangleShape2D_0itp5")
+debug_color = Color(0.65407866, 0.032162003, 0.27045298, 0.41960785)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="border" unique_id=859261103]
+polygon = PackedVector2Array(2, -614, 7, -754, 1152, -760, 1162, 17, 1, 25, 4, -612, -202, -601, -220, 128, 1346, 131, 1332, -713, 1320, -882, -139, -802, -202, -596)
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=669840711]
+offset_left = 113.0
+offset_top = 130.0
+offset_right = 2293.0
+offset_bottom = 1136.3665
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_ymxsy")
+stretch_mode = 0
+script = ExtResource("3_8sst4")
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1387406501]
+offset_left = 327.0
+offset_top = 242.0
+offset_right = 2507.0
+offset_bottom = 1248.3665
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_ymxsy")
+stretch_mode = 0
+script = ExtResource("3_8sst4")
+
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=2079606442]
+offset_left = 769.0
+offset_top = 343.0
+offset_right = 2949.0
+offset_bottom = 1349.3665
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_ymxsy")
+stretch_mode = 0
+script = ExtResource("3_8sst4")
+
+[node name="TextureButton4" type="TextureButton" parent="." unique_id=635690932]
+offset_left = 683.0
+offset_top = 78.00003
+offset_right = 2863.0
+offset_bottom = 1084.3665
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_ymxsy")
+stretch_mode = 0
+script = ExtResource("3_8sst4")
+
+[node name="ThemedTimer" parent="." unique_id=317205918 instance=ExtResource("4_8sst4")]
+position = Vector2(943, 11)
+scale = Vector2(2, 2)
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton2" to="TextureButton2" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton3" to="TextureButton3" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton4" to="TextureButton4" method="_on_pressed"]

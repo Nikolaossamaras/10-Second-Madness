@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://t8srvqgelitv"]
 
-[ext_resource type="Texture2D" uid="uid://bbxalsjgpbm6q" path="res://asset/bg_10second_madness.png" id="1_6g01l"]
+[ext_resource type="Texture2D" uid="uid://c56cn6y1234sv" path="res://asset/bg_10second_madness.png" id="1_6g01l"]
 [ext_resource type="Script" uid="uid://dnnt7rgsce0hj" path="res://script/level_scene.gd" id="1_pc6o6"]
-[ext_resource type="Texture2D" uid="uid://c0mlf8fsdeepc" path="res://asset/heart_10sec_madness.png" id="2_f1m7q"]
+[ext_resource type="Texture2D" uid="uid://cux4xmbmwkihj" path="res://asset/heart_10sec_madness.png" id="2_f1m7q"]
 
 [node name="level_scene" type="Node2D" unique_id=922411500]
 script = ExtResource("1_pc6o6")
