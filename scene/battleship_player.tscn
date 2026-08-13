@@ -23,13 +23,13 @@ scale = Vector2(2.3984375, 2.3984375)
 shape = SubResource("CapsuleShape2D_pbbsu")
 
 [node name="shooting_hit" type="CollisionShape2D" parent="." unique_id=348443533]
-position = Vector2(-45.5, -113)
+position = Vector2(-45.5, -154)
 scale = Vector2(2.3984375, 2.3984375)
 shape = SubResource("RectangleShape2D_pbbsu")
 debug_color = Color(0.74702626, 0.46223277, 0, 0.41960785)
 
 [node name="shooting_hit2" type="CollisionShape2D" parent="." unique_id=2103331067]
-position = Vector2(46, -113)
+position = Vector2(46, -154)
 scale = Vector2(2.3984375, 2.3984375)
 shape = SubResource("RectangleShape2D_pbbsu")
 debug_color = Color(0.74702626, 0.46223277, 0, 0.41960785)

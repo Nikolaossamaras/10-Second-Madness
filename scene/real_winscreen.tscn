@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://brr4sks5jxjjh"]
+
+[ext_resource type="Texture2D" uid="uid://c56cn6y1234sv" path="res://asset/bg_10second_madness.png" id="1_22433"]
+[ext_resource type="Script" uid="uid://ugx8vpd8f3rc" path="res://script/real_winscreen.gd" id="1_oj80h"]
+
+[sub_resource type="Animation" id="Animation_22433"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("quit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(533, 744)]
+}
+
+[sub_resource type="Animation" id="Animation_oj80h"]
+resource_name = "quit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("quit:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(533, 744), Vector2(511, 462)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vaqk5"]
+_data = {
+&"RESET": SubResource("Animation_22433"),
+&"quit": SubResource("Animation_oj80h")
+}
+
+[node name="reaL_winscreen" type="Node2D" unique_id=464703653]
+script = ExtResource("1_oj80h")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=638476299]
+scroll_offset = Vector2(-4, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1254826861]
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 1163.0
+offset_bottom = 649.0
+texture = ExtResource("1_22433")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=378414753]
+clip_contents = false
+offset_left = 262.0
+offset_top = 185.0
+offset_right = 1095.0
+offset_bottom = 395.0
+theme_override_colors/default_color = Color(0.8500177, 0.84986556, 0.1325432, 1)
+theme_override_colors/font_selected_color = Color(0.7396408, 0.73964113, 0, 0)
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 128
+text = "VICTORY !!"
+
+[node name="quit" type="Button" parent="." unique_id=1684677222]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 533.0
+offset_top = 744.0
+offset_right = 630.0
+offset_bottom = 797.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.40784314, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 32
+text = "quit
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1781900793]
+libraries/ = SubResource("AnimationLibrary_vaqk5")
+autoplay = &"quit"
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://6lyq8j2vlmnq"]
+
+[ext_resource type="Texture2D" uid="uid://bl0qeu6t72ffb" path="res://asset/Kla'ed/Base/PNGs/Kla'ed - Bomber - Base.png" id="1_jyea4"]
+[ext_resource type="Script" uid="uid://btjqwa30227f5" path="res://script/enemy_ship.gd" id="2_7nv28"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ixap"]
+radius = 14.0
+height = 36.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7nv28"]
+radius = 170.00294
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wye45"]
+radius = 13.0
+
+[node name="enemy_ship" type="CharacterBody2D" unique_id=94992994]
+script = ExtResource("2_7nv28")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1415732289]
+texture = ExtResource("1_jyea4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=574853077]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CapsuleShape2D_5ixap")
+debug_color = Color(0.65117973, 0.51966053, 0, 0.41960785)
+
+[node name="detection_area" type="Area2D" parent="." unique_id=397723225]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area" unique_id=1989527632]
+shape = SubResource("CircleShape2D_7nv28")
+
+[node name="hit_area" type="Area2D" parent="." unique_id=1762602695]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_area" unique_id=621960914]
+shape = SubResource("CircleShape2D_wye45")
+debug_color = Color(0.96543866, 0, 0.48961806, 0.41960785)
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="hit_area" to="." method="_on_hit_area_body_entered"]

@@ -33,18 +33,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sdoi"]
-size = Vector2(4, 12)
+size = Vector2(13, 28)
 
 [node name="projectile" type="Area2D" unique_id=1724536608]
+light_mask = 2
+visibility_layer = 2
 script = ExtResource("1_u6xv6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1518788158]
+position = Vector2(4.5, 9)
+scale = Vector2(2.125, 2.125)
 sprite_frames = SubResource("SpriteFrames_gaw4a")
 animation = &"attack"
-frame_progress = 0.2696877
+frame_progress = 0.9599048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=416613593]
-position = Vector2(0, 2)
+position = Vector2(4.5, 10)
 shape = SubResource("RectangleShape2D_5sdoi")
 debug_color = Color(0.9367207, 1.7327071e-05, 0.63312167, 0.41960785)
 

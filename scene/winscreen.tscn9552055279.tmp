@@ -55,30 +55,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(554, 1041)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Label:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1277, -894)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Label2:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -822)]
-}
 
 [sub_resource type="Animation" id="Animation_glp3i"]
 resource_name = "cut_scene"
@@ -131,30 +107,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(554, 1041), Vector2(554, 94)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Label:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-875, -415), Vector2(0, -411)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Label2:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -822), Vector2(0, 68)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fj7iy"]
 _data = {
@@ -206,7 +158,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 252.0
 offset_top = -230.0
-offset_right = 1034.9998
+offset_right = 1034.9996
 offset_bottom = 553.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -221,24 +173,6 @@ wait_time = 2.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=224791726]
 libraries/ = SubResource("AnimationLibrary_fj7iy")
 
-[node name="Label" type="Label" parent="." unique_id=842398373]
-offset_left = -1277.0
-offset_top = -894.0
-offset_right = -649.0
-offset_bottom = -827.0
-theme_override_constants/outline_size = 40
-theme_override_font_sizes/font_size = 48
-text = "YOU HAVE KILLED x/x ships"
-
-[node name="Label2" type="Label" parent="." unique_id=2073208401]
-offset_top = -822.0
-offset_right = 628.0
-offset_bottom = -685.0
-theme_override_constants/outline_size = 40
-theme_override_font_sizes/font_size = 48
-text = "space - shoot
-arrows - move"
-
 [node name="player_ship" parent="." unique_id=2146196784 instance=ExtResource("3_fj7iy")]
 position = Vector2(554, 1041)
 scale = Vector2(0.5, 0.5)
@@ -247,16 +181,4 @@ SPEED = 800.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=273683815]
 position = Vector2(571, -108)
 
-[node name="spawn_time" type="Timer" parent="." unique_id=653392457]
-wait_time = 1.5
-
-[node name="instructions" type="Timer" parent="." unique_id=240191712]
-wait_time = 4.0
-
-[node name="Timer" type="Timer" parent="." unique_id=924634679]
-wait_time = 3.5
-
 [connection signal="timeout" from="wait_until_cutscene" to="." method="_on_wait_until_cutscene_timeout"]
-[connection signal="timeout" from="spawn_time" to="." method="_on_spawn_time_timeout"]
-[connection signal="timeout" from="instructions" to="." method="_on_instructions_timeout"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
