@@ -1,83 +1,26 @@
-# 🕐 10 Second Madness
+# 10 second Madness
+> a Warioware-type game with 4 diffrent minigames in it made specifically for Marioware Mission of stardance 2026 by hackclub.
 
-A fast-paced minigame collection built in **Godot 4** where every challenge lasts just 10 seconds. Complete minigames, survive the timer, and don't lose your lives!
+## What is a Warioware
 
----
+WarioWare is a fast-paced video game series created by Nintendo.The games feature chaotic, ultra-short "microgames" that last only a few seconds , which is what i have replicated in this gamei
 
-## 🎮 About
+## Feautures 
 
-10 Second Madness is a collection of quick minigames where the player must complete each objective before the 10-second timer runs out. Fail and you lose a life. Complete enough minigames and you reach the finish screen.
+The game has 3 normal and 1 secret minigame that unlocks after a short cutscene at the first winscreen of the game.
 
----
+### 1st minigame
 
-## 🕹️ How to Play
+The 1st minigame is a small platformer in which you need to collect 2 orbs in 10 seconds in order to win , you can control your player with the arrow keys for left and right a the spacebar to jump
 
-- Each minigame gives you **10 seconds** to complete an objective
-- **Complete the objective** → move to the next minigame
-- **Run out of time** → lose a life and go back to the intermission
-- Complete enough minigames to reach the **done screen** and win
+### 2nd minigame
 
----
+The 2nd minigame is a collecting minigame, you collect diffrent orbs by clicking them on the screen in total you need to click all of the orbs on the screen in under 10 seconds
 
-## 🗂️ Minigames
+### 3rd minigame
 
-| Minigame | Objective |
-|---|---|
-| ** madness orb Collector** | Collect 2 madness orbs before the timer runs out |
-| **Space Shooter** | Survive enemy ships and shoot them down |
-| *(more coming soon)* | |
+The 3rd minigame is a clicker , you goal is to click 50 times on a rock icon in under 10 seconds
 
----
+### "Secret" minigame
 
-## 🛠️ Built With
-
-- **Godot 4** — Game engine
-- **GDScript** — Scripting language
-- **Godot AnimationPlayer** — Cutscenes and animations
-- **Godot Area2D / CharacterBody2D** — Physics and collision
-
----
-
-## 📁 Project Structure
-
-```
-10-Second-Madness/
-├── scenes/
-│   ├── timer_screen.tscn    # Intermission between minigames
-│   ├── done_screen.tscn     # Win screen
-│   ├── winscreen.tscn       # Space shooter scene
-│   └── ...
-├── characters/
-│   ├── player_ship.tscn     # Player ship
-│   ├── enemy_ship.tscn      # Enemy ship
-│   ├── projectile.tscn      # Player projectile
-│   └── ...
-├── scripts/
-│   └── Global.gd            # Autoload — tracks lives, minigames done
-└── README.md
-```
-
----
-
-## ⚙️ Global State
-
-The game uses a **Global autoload singleton** to track persistent state across scenes:
-
-```gdscript
-Global.lives          # how many lives the player has left
-Global.minigames_done # how many minigames have been completed
-```
-
----
-
-## 🚀 How to Run
-
-1. Clone the repo:
-```bash
-git clone https://github.com/Nikolaossamaras/10-Second-Madness.git
-```
-2. Open **Godot 4**
-3. Click **Import** and select the project folder
-4. Hit **Play** ▶️
-   or visit my Itch.io page for [10 second madness](https://scammaras.itch.io/10-second-madness)
-
+to unlcok this Secret minigame you need to first win the 3 previous ones then at the Winscreen you need to wait 2 seconds , afterwards a cutscene will play and a space shooter minigame will start, your goal is to defeat 10 enemies after that you will win and beat the game
