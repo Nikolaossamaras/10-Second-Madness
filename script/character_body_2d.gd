@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var health = 100
+@export var health:int = 100
 @export var SPEED = 300.0
 @onready var projectile_scene = preload("res://scene/projectile.tscn")
 @onready var shooting_hit: CollisionShape2D = $shooting_hit
@@ -7,7 +7,10 @@ extends CharacterBody2D
 
 func player():
 	pass
+	
 func _physics_process(delta: float) -> void:
+	if health <= 0:
+		get_tree().change_scene_to_file("res://scene/deathscreen.tscn")
 	
 	if Input.is_action_just_pressed("shoot"):
 		spawn_projectile(shooting_hit.global_position)

@@ -13,3 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file('res://scene/TitleScreen.tscn')
+	Global.lives = 5
+	Global.minigames_done = 0
+	Global.ships_killed = 0

@@ -4,6 +4,7 @@ var one_time = 0
 @onready var enemy_scene = preload("res://scene/enemy_ship.tscn")
 
 func _ready() -> void:
+	$death.monitoring = false
 	$instructions.start()
 	$wait_until_cutscene.start()
 	$Timer.start()
@@ -28,6 +29,7 @@ var times = 0
 func _on_timer_timeout() -> void:
 	if times == 0:
 		spawn_enemy()
+		$death.monitoring = true
 		times +=1
 
 
@@ -38,3 +40,8 @@ func _on_spawn_time_timeout() -> void:
 
 func _on_instructions_timeout() -> void:
 	$Label2.visible=false
+
+
+func _on_death_body_entered(body: Node2D) -> void:
+	if body.has_method('player'):
+		get_tree().change_scene_to_file("res://scene/deathscreen.tscn")

@@ -162,6 +162,9 @@ _data = {
 &"cut_scene": SubResource("Animation_glp3i")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82lut"]
+size = Vector2(1167, 129)
+
 [node name="Winscreen" type="Node2D" unique_id=468676933]
 script = ExtResource("1_82lut")
 
@@ -256,7 +259,14 @@ wait_time = 4.0
 [node name="Timer" type="Timer" parent="." unique_id=924634679]
 wait_time = 3.5
 
+[node name="death" type="Area2D" parent="." unique_id=352991777]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death" unique_id=344638104]
+position = Vector2(573.5, 779.5)
+shape = SubResource("RectangleShape2D_82lut")
+
 [connection signal="timeout" from="wait_until_cutscene" to="." method="_on_wait_until_cutscene_timeout"]
 [connection signal="timeout" from="spawn_time" to="." method="_on_spawn_time_timeout"]
 [connection signal="timeout" from="instructions" to="." method="_on_instructions_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="death" to="." method="_on_death_body_entered"]
