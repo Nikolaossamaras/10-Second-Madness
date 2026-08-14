@@ -79,7 +79,5 @@ git clone https://github.com/Nikolaossamaras/10-Second-Madness.git
 2. Open **Godot 4**
 3. Click **Import** and select the project folder
 4. Hit **Play** ▶️
+   or visit my Itch.io page for [10 second madness](https://scammaras.itch.io/10-second-madness)
 
-## 📄 License
-
-Open source — free to use and learn from.
