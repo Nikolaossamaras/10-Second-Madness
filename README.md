@@ -35,5 +35,8 @@ You can also die if the enemy pushes you out of bounds
 
 In the Titlescene you will see 3 buttons play settings and quit, but only 2 of them work until now , the play and quit button , later on the setting will be available
 
+## PLAY
+[play](https://scammaras.itch.io/10-second-madness)
+
 
 
